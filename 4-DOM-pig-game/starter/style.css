@@ -137,9 +137,15 @@ i {
     transition: margin 0.3s;
 }
 
-.btn-new { top: 45px;}
+.btn-new { top: 55px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
+
+.btn-game-mode {
+    left: 0;
+    top: 12px;
+    transform: none;
+}
 
 .dice {
     position: absolute;
@@ -150,5 +156,98 @@ i {
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
 }
 
+#dice-1 {
+    top: 130px;
+}
+
+#dice-2 {
+    top: 250px;
+}
+
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
+
+.final-score--display {
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    top: 12px;
+    text-align: center;
+}
+
+.final-score--value {
+    color: #EB4D4D;
+}
+
+.final-score {
+    padding: 10px 30px;
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    top: 520px;
+    text-align: center;
+}
+
+.rules {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #555;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+
+    text-align: right;
+
+    display: flex;
+    flex-direction: column;
+} 
+
+.rules__title:hover ~ .rules__feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.rules__feed {
+    display: none;
+    margin-top: 5px;    
+    padding: 20px;
+    text-align: center;
+    text-transform: none;
+    width: 340px;
+    height: 490px;
+    background-color: #DCDCDC;
+    list-style: none;
+    font-family: Lato;
+    font-size: 16px;
+    position: relative;
+}
+
+.rules__feed::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  
+    left: 90%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #DCDCDC transparent;
+} 

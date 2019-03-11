@@ -30,17 +30,23 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
 
     if(gamePlaying) {
         //Random number on dice
-        var dice = Math.floor(Math.random()*6) + 1;
+        var dice1 = Math.floor(Math.random()*6) + 1;
+        var dice2 = Math.floor(Math.random()*6) + 1;
 
         //Display the result
-        var diceDOM = document.querySelector('.dice');  
-        diceDOM.style.display = 'block';
-        diceDOM.src = 'dice-'+ dice + '.png';
+        var dice1DOM = document.getElementById('dice-1'); 
+        var dice2DOM = document.getElementById('dice-2'); 
+
+        dice1DOM.style.display = 'block';
+        dice2DOM.style.display = 'block';
+        dice1DOM.src = 'dice-'+ dice1 + '.png';
+        dice2DOM.src = 'dice-'+ dice2 + '.png';
 
 
         //Update round score IF the role was NOT a 1
-        if (dice !== 1) {
+        if (dice1 !== 1 && dice2 !== 1) {
             
+            /*
             if(dice === 6 && prevRollSix === false) { //First 6
                 prevRollSix = true;
 
@@ -61,7 +67,11 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
                 roundScore += dice;
                 document.querySelector('#current-' + activePlayer).textContent = roundScore;
             }
-        
+            */  
+           
+            //Ads score
+            roundScore += (dice1 + dice2);
+            document.querySelector('#current-' + activePlayer).textContent = roundScore;
 
         } else { //Rolled 1
             //Next player
@@ -123,7 +133,7 @@ function init() {
     finalScore_value.textContent = finalScore; 
 
     
-    //DICE NOT DISPLAYED AT THE BEGINNING
+    //DICES NOT DISPLAYED AT THE BEGINNING
     document.getElementById('dice-1').style.display = 'none';
     document.getElementById('dice-2').style.display = 'none';
 
@@ -158,5 +168,3 @@ function nextPlayer() {
     document.getElementById('dice-1').style.display = 'none';
     document.getElementById('dice-2').style.display = 'none';
 }
-
-    

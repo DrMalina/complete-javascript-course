@@ -29,13 +29,30 @@
                 </div>
             </div>
             
+            <div class="final-score--display">Final Score is set to <span class="final-score--value">100</span></div>
+            <div class="rules">
+                <p class="rules__title">Rules</p>
+                <ul class="rules__feed">
+                    <li>1) The game has 2 players, playing in rounds.</li>
+                    <li>2) In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score.</li>
+                    <li>3) If the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn.</li>
+                    <li>4) If the player rolls two 6 in a row, ENTIRE score is lost. After that, it's the next player turn.</li>
+                    <li>5) The player can choose to 'Hold', which means that his ROUND score gets added to his GLOBAL score. After that, it's the next player's turn.</li>
+                    <li>6) The first player to reach 100 points on GLOBAL score wins the game.</li>
+                    <li>To set your own winning score, put the number greater than 1 in the input field and hit 'New Game' button. Default score is 100.</li>
+                </ul>
+            </div>
             <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
             <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+
+            <input type="text" placeholder="Final Score" class="final-score">
             
-            <img src="dice-5.png" alt="Dice" class="dice">
+            <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">
+            <img src="dice-3.png" alt="Dice" class="dice" id="dice-2">
         </div>
         
         <script src="app.js"></script>
+        <!--<script class="script" src="app_twoDices.js"></script>-->
     </body>
 </html>
